@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
-  --foreground: #ffffff;
+  --background: #070706;
+  --foreground: #f8f5ed;
 }
 
 * {
@@ -11,22 +11,18 @@
 
 html {
   scroll-behavior: smooth;
-  background: #050505;
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
-  background: #050505;
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
+  background: #070706;
+  color: #f8f5ed;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 button,
@@ -35,133 +31,215 @@ a {
 }
 
 button {
-  font-family: inherit;
+  cursor: pointer;
 }
 
 ::selection {
-  background: rgba(240, 185, 11, 0.25);
-  color: #ffffff;
+  background: rgba(224, 182, 75, 0.25);
+  color: #fff;
 }
 
-/* REMUS GRID */
+/* PREMIUM BACKGROUND */
 
-.remus-grid {
+.premium-grid {
   background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.025) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.025) 1px,
-      transparent 1px
-    );
-  background-size: 60px 60px;
-  mask-image: radial-gradient(
-    ellipse at center,
-    black 20%,
-    transparent 75%
-  );
-  -webkit-mask-image: radial-gradient(
-    ellipse at center,
-    black 20%,
-    transparent 75%
-  );
+    linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+  background-size: 54px 54px;
 }
 
-/* GOLD GRADIENT */
-
-.remus-gold-gradient {
-  background: linear-gradient(
-    135deg,
-    #ffe28a 0%,
-    #f0b90b 45%,
-    #d99d00 100%
-  );
-}
-
-.remus-gold-text {
-  background: linear-gradient(
-    135deg,
-    #fff1a8 0%,
-    #f0b90b 45%,
-    #d99d00 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.remus-shimmer {
-  background: linear-gradient(
-    110deg,
-    #ffffff 10%,
-    #fff8cf 30%,
-    #f0b90b 48%,
-    #ffffff 62%,
-    #f0b90b 82%
-  );
-  background-size: 220% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: remusShimmer 5s linear infinite;
-}
-
-@keyframes remusShimmer {
-  0% {
-    background-position: 200% center;
-  }
-
-  100% {
-    background-position: -20% center;
-  }
-}
-
-/* GLASS */
-
-.remus-glass {
-  border: 1px solid rgba(255, 255, 255, 0.075);
-  background: rgba(255, 255, 255, 0.018);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-}
-
-/* GOLD GLOW */
-
-.remus-orb {
+.premium-orb {
   position: absolute;
   border-radius: 9999px;
-  background: radial-gradient(
-    circle at center,
-    rgba(240, 185, 11, 0.13) 0%,
-    rgba(240, 185, 11, 0.05) 35%,
-    rgba(240, 185, 11, 0) 72%
+  filter: blur(120px);
+}
+
+.premium-orb-gold {
+  width: 500px;
+  height: 500px;
+  left: -220px;
+  top: 18%;
+  background: rgba(213, 165, 53, 0.045);
+}
+
+.premium-orb-amber {
+  width: 500px;
+  height: 500px;
+  right: -250px;
+  top: 45%;
+  background: rgba(196, 129, 30, 0.035);
+}
+
+.premium-orb-white {
+  width: 420px;
+  height: 420px;
+  left: 50%;
+  top: -300px;
+  transform: translateX(-50%);
+  background: rgba(255, 245, 210, 0.035);
+}
+
+/* TYPOGRAPHY */
+
+.premium-gradient-text {
+  background: linear-gradient(
+    100deg,
+    #f5df9b 0%,
+    #e8b842 40%,
+    #c98520 72%,
+    #f0ca65 100%
   );
-  filter: blur(25px);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.remus-gold-glow {
+.section-label {
+  margin: 0;
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #c9a342;
+}
+
+.section-title {
+  margin-top: 10px;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 0.98;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  color: #eee9df;
+}
+
+.section-title span {
+  color: #57534c;
+}
+
+/* PREMIUM CARDS */
+
+.premium-card {
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.032),
+      rgba(255, 255, 255, 0.012)
+    );
   box-shadow:
-    0 0 35px rgba(240, 185, 11, 0.08),
-    inset 0 0 30px rgba(240, 185, 11, 0.025);
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    0 20px 80px rgba(0, 0, 0, 0.15);
 }
 
-/* FLOATING */
+/* PREMIUM BANNER */
 
-.remus-float {
-  animation: remusFloat 4s ease-in-out infinite;
+.premium-banner {
+  position: relative;
+  background: #0b0b09;
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.025);
 }
 
-@keyframes remusFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
+.premium-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(225, 180, 65, 0.06),
+      transparent 35%,
+      transparent 65%,
+      rgba(225, 180, 65, 0.05)
+    );
+  mix-blend-mode: screen;
+}
 
-  50% {
-    transform: translateY(-8px);
-  }
+/* COIN SPRAY */
+
+.coin {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(249, 216, 132, 0.5);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #f8df9a,
+      #d49d32 45%,
+      #79520f 100%
+    );
+  box-shadow:
+    0 0 25px rgba(224, 177, 63, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  color: rgba(48, 34, 10, 0.85);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.coin::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(50, 35, 10, 0.28);
+  border-radius: 50%;
+}
+
+.coin-one {
+  transform: rotate(17deg) scale(0.8);
+}
+
+.coin-two {
+  transform: rotate(-22deg) scale(0.65);
+}
+
+.coin-three {
+  transform: rotate(30deg) scale(0.9);
+}
+
+.coin-four {
+  transform: rotate(-12deg) scale(0.7);
+}
+
+.coin-five {
+  transform: rotate(25deg) scale(0.85);
+}
+
+.coin-six {
+  transform: rotate(-30deg) scale(0.6);
+}
+
+.coin-seven {
+  transform: rotate(18deg) scale(0.75);
+}
+
+.coin-eight {
+  transform: rotate(-18deg) scale(0.65);
+}
+
+/* DOT GRID */
+
+.premium-dot-grid {
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.7) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
+/* VIDEO */
+
+video {
+  display: block;
 }
 
 /* SCROLLBAR */
@@ -171,38 +249,32 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #070706;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(240, 185, 11, 0.25);
   border-radius: 999px;
+  background: #2a2721;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(240, 185, 11, 0.5);
+  background: #5b4a29;
 }
 
 /* MOBILE */
 
 @media (max-width: 640px) {
-  .remus-grid {
-    background-size: 40px 40px;
-  }
-}
-
-/* REDUCED MOTION */
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  .coin {
+    width: 22px;
+    height: 22px;
+    font-size: 8px;
   }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .section-title {
+    font-size: 2.45rem;
+  }
+
+  .premium-grid {
+    background-size: 42px 42px;
   }
 }
